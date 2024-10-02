@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luas Persegi Panjang dan Lingkaran</title>
+  </head>
+
+  <body>
+    <h2>Menghitung Luas Persegi Panjang dan Lingkaran</h2>
+    <script>
+      // Function declaration untuk menghitung luas persegi panjang
+      function hitungLuasPersegiPanjang(panjang, lebar) {
+        let luas = panjang * lebar;
+
+        return `Luas persegi panjang dengan panjang ${panjang} dan lebar ${lebar} adalah ${luas}`;
+      }
+
+      // Arrow function untuk menghitung luas lingkaran
+      const hitungLuasLingkaran = (jariJari) => {
+        const pi = 3.14;
+        let luas = pi * jariJari * jariJari;
+
+        return `Luas lingkaran dengan jari-jari ${jariJari} adalah ${luas}`;
+      };
+
+      // Contoh penggunaan function untuk menghitung luas persegi panjang
+      let panjang = 10;
+      let lebar = 5;
+      document.write(`<p>${hitungLuasPersegiPanjang(panjang, lebar)}</p>`);
+
+      // Contoh penggunaan arrow function untuk menghitung luas lingkaran
+      let jariJari = 7;
+      document.write(`<p>${hitungLuasLingkaran(jariJari)}</p>`);
+    </script>
+  </body>
+</html>
