@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perhitungan Gaji Pegawai</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .method {
+        width: 45%;
+        border: 1px solid #000;
+        border-radius: 8px;
+        padding: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Perhitungan Gaji Pegawai Berdasarkan Golongan</h2>
+    <div class="container">
+      <!-- If Else -->
+      <div class="method">
+        <h3>Metode If Else</h3>
+        <form id="formIfElse">
+          <label for="golIfElse">Golongan (1, 2, 3):</label>
+          <input
+            type="number"
+            id="golIfElse"
+            name="golIfElse"
+            required
+          /><br /><br />
+
+          <label for="statusIfElse">Status Menikah:</label>
+          <select id="statusIfElse" name="statusIfElse">
+            <option value="true">Sudah Menikah</option>
+            <option value="false">Belum Menikah</option></select
+          ><br /><br />
+
+          <button type="button" onclick="hitungGajiIfElse()">
+            Hitung Gaji
+          </button>
+        </form>
+        <p id="hasilIfElse"></p>
+      </div>
+
+      <!-- Switch Case -->
+      <div class="method">
+        <h3>Metode Switch Case</h3>
+        <form id="formSwitchCase">
+          <label for="golSwitchCase">Golongan (1, 2, 3):</label>
+          <input
+            type="number"
+            id="golSwitchCase"
+            name="golSwitchCase"
+            required
+          /><br /><br />
+
+          <label for="statusSwitchCase">Status Menikah:</label>
+          <select id="statusSwitchCase" name="statusSwitchCase">
+            <option value="true">Sudah Menikah</option>
+            <option value="false">Belum Menikah</option></select
+          ><br /><br />
+
+          <button type="button" onclick="hitungGajiSwitchCase()">
+            Hitung Gaji
+          </button>
+        </form>
+        <p id="hasilSwitchCase"></p>
+      </div>
+    </div>
+
+    <script>
+      // Fungsi untuk menghitung gaji dengan if else
+      function hitungGajiIfElse() {
+        const golongan = parseInt(document.getElementById('golIfElse').value);
+        const sudahMenikah =
+          document.getElementById('statusIfElse').value === 'true';
+
+        let gajiPokok = 0;
+        let tunjangan = 0;
+
+        if (golongan === 1) {
+          gajiPokok = 10000000;
+        } else if (golongan === 2) {
+          gajiPokok = 15000000;
+          if (sudahMenikah) {
+            tunjangan = 2000000;
+          }
+        } else if (golongan === 3) {
+          gajiPokok = 20000000;
+        } else {
+          document.getElementById('hasilIfElse').textContent =
+            'Golongan tidak valid';
+          return;
+        }
+
+        const gajiBersih = gajiPokok + tunjangan;
+        document.getElementById(
+          'hasilIfElse'
+        ).textContent = `Gaji bersih: Rp ${gajiBersih.toLocaleString()}`;
+      }
+
+      // Fungsi untuk menghitung gaji dengan switch case
+      function hitungGajiSwitchCase() {
+        const golongan = parseInt(
+          document.getElementById('golSwitchCase').value
+        );
+        const sudahMenikah =
+          document.getElementById('statusSwitchCase').value === 'true';
+
+        let gajiPokok = 0;
+        let tunjangan = 0;
+
+        switch (golongan) {
+          case 1:
+            gajiPokok = 10000000;
+            break;
+          case 2:
+            gajiPokok = 15000000;
+            if (sudahMenikah) {
+              tunjangan = 2000000;
+            }
+            break;
+          case 3:
+            gajiPokok = 20000000;
+            break;
+          default:
+            document.getElementById('hasilSwitchCase').textContent =
+              'Golongan tidak valid';
+            return;
+        }
+
+        const gajiBersih = gajiPokok + tunjangan;
+        document.getElementById(
+          'hasilSwitchCase'
+        ).textContent = `Gaji bersih: Rp ${gajiBersih.toLocaleString()}`;
+      }
+    </script>
+  </body>
+</html>
