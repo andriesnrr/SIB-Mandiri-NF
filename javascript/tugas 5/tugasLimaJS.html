@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Lima</title>
+  </head>
+  <body>
+    <h1>Hitung Total Nilai</h1>
+    <p>Masukkan nama dan nilai-nilai untuk menghitung total:</p>
+
+    <form id="nilaiForm">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required /><br /><br />
+
+      <label for="nilai">Nilai (pisahkan dengan koma):</label>
+      <input
+        type="text"
+        id="nilai"
+        name="nilai"
+        placeholder="Contoh: 10, 20, 30"
+        required
+      /><br /><br />
+
+      <button type="submit">Hitung Total</button>
+    </form>
+
+    <p id="hasil"></p>
+
+    <script src="/js/hitungTotal.js"></script>
+  </body>
+</html>
