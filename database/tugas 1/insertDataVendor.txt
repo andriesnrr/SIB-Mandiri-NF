@@ -1,0 +1,6 @@
+INSERT INTO vendor (nomor, nama, kode, alamat, kontak) VALUES
+('V001', 'PT. Sumber Makmur', 'SM001', 'Jl. Merdeka No.10, Jakarta', '081234567890'),
+('V002', 'UD. Berkah Abadi', 'BA002', 'Jl. Sejahtera No.25, Bandung', '081987654321'),
+('V003', 'CV. Aneka Jaya', 'AJ003', 'Jl. Cendana No.5, Surabaya', '081234123456'),
+('V004', 'PT. Mega Utama', 'MU004', 'Jl. Sudirman No.15, Semarang', '082345678912'),
+('V005', 'UD. Toko Baru', 'TB005', 'Jl. Jendral Sudirman No.20, Yogyakarta', '085678912345');

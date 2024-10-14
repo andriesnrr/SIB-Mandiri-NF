@@ -1,0 +1,11 @@
+CREATE TABLE pembelian (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tanggal DATE NOT NULL,
+    nomor VARCHAR(20) NOT NULL,
+    produk_id INT NOT NULL,
+    jumlah INT NOT NULL,
+    harga DECIMAL(10, 2) NOT NULL,
+    vendor_id INT NOT NULL,
+    FOREIGN KEY (produk_id) REFERENCES produk(id),
+    FOREIGN KEY (vendor_id) REFERENCES vendor(id)
+);
